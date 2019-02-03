@@ -20,7 +20,7 @@
   <script>
     var isVisible = true;
     function scaleFavorites() {
-      $("#mylist").toggleClass("scale-in");
+      $("#mylist").toggleClass("scale-out");
       if (isVisible) {
         isVisible = false;
         $("button").text("Show Favorites");
@@ -49,7 +49,7 @@
       </button>
       
       <!-- Collapsible for user's favorite events -->
-      <ul class="collapsible scale-transition scale-out scale-in" id="mylist">
+      <ul class="collapsible scale-transition" id="mylist">
         <li>
           <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
           <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
