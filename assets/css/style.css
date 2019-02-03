@@ -11,3 +11,9 @@ main {
 }
 
 /* END sticky footer styles */
+
+body {
+  background-image: url("../images/background.jpg");
+  background-position: cover;
+  background-size: 100%;
+}
