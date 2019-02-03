@@ -5,6 +5,8 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>When Meetup Met Weather</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- jQuery, maybe move to bottom of page when all js is moved to main.js-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!--Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- materialize.css -->
@@ -13,6 +15,23 @@
   <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css" />
 </head>
 <body>
+
+  <!-- Script for testing scale transition, add to .js file later -->
+  <script>
+    var isVisible = true;
+    function scaleFavorites() {
+      $("#mylist").toggleClass("scale-in");
+      if (isVisible) {
+        isVisible = false;
+        $("button").text("Show Favorites");
+        $(".collapsible-body").attr('style', '');
+      }
+      else {
+        isVisible = true;
+        $("button").text("Hide Favorites");
+      }
+    }
+  </script>
 
   <header>
     <!-- TODO Add navbar -->
@@ -25,7 +44,26 @@
 
       <!-- TODO Add collection for query results -->
 
-      <!-- TODO Add collapsible for user's favorite events -->
+      <!-- Button to trigger scale in/out for collapsible -->
+      <button class="btn waves-effect waves-light indigo darken-3" type="submit" name="action" onclick="scaleFavorites()">Hide
+        Favorites
+      </button>
+      
+      <!-- Collapsible for user's favorite events -->
+      <ul class="collapsible scale-transition scale-out scale-in" id="mylist">
+        <li>
+          <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+        </li>
+      </ul>
 
     </div>
   </main>
@@ -39,12 +77,16 @@
       </div>
     </div>
   </footer>
-  
+
+  <!-- Script for testing, add to .js file later -->
+  <script>
+    $(document).ready(function () {
+      $('.collapsible').collapsible();
+    });
+  </script>
 
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- materialize.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- Main JavaScript file -->
