@@ -1,0 +1,19 @@
+/* sticky footer styles */
+
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+  flex: 10 auto;
+}
+
+/* END sticky footer styles */
+
+body {
+  background-image: url("../images/background.jpg");
+  background-position: cover;
+  background-size: 100%;
+}
