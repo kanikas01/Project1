@@ -26,11 +26,11 @@
       $("#mylist").toggleClass("scale-out");
       if (isVisible) {
         isVisible = false;
-        $("button").text("Show Favorites");
+        $("#hide-favorites").text("Show Favorites");
       }
       else {
         isVisible = true;
-        $("button").text("Hide Favorites");
+        $("#hide-favorites").text("Hide Favorites");
       }
     }
   </script>
@@ -42,7 +42,7 @@
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper indigo darken-2">
-          <a href="#" class="brand-logo">Title or Logo</a>
+          <a href="#" class="brand-logo center">Looking for a fun activity?</a>
             <ul id="nav-mobile" class="right hide-on-med-and-down"> 
               <a class="dropdown-trigger btn-floating pulse orange" href='#' data-target='dropdownmenu'><i class="material-icons">menu</i></a>
                 <ul id='dropdownmenu' class='dropdown-content'>
@@ -67,12 +67,69 @@
   <main>
     <div class="container">
 
-      <!-- TODO Add form for user input -->
+      <!-- Form for user input -->
+      <div class="row white">
+        <form action="" class="col s12">
+          <div class="row">
+            <div class="input-field col s4">
+              <input placeholder="Your name" id="name" type="text">
+            </div>
+            <div class="input-field col s4">
+              <input placeholder="Your city" id="city" type="text">
+            </div>
+            <div class="input-field col s4">
+              <select>
+                <option value="" disabled selected>Select a category</option>
+                <option value="Arts">Arts & Culture</option>
+                <option value="Book Clubs">Book Clubs</option>
+                <option value="Business">Career & Business</option>
+                <option value="Auto">Cars & Motorcycles</option>
+                <option value="Community">Community & Environment</option>
+                <option value="Dancing">Dancing</option>
+                <option value="Education">Education & Learning</option>
+                <option value="Fashion">Fashion & Beauty</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Food & Drink">Food & Drink</option>
+                <option value="Games">Games</option>
+                <option value="Movements">Movements & Politics</option>
+                <option value="Well-being">Health & Wellbeing</option>
+                <option value="Crafts">Hobbies & Crafts</option>
+                <option value="Languages">Language & Ethnic Identity</option>
+                <option value="LGBT">LGBT</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Films">Movies & Film</option>
+                <option value="Music">Music</option>
+                <option value="Spirituality">New Age & Spirituality</option>
+                <option value="Outdoors">Outdoors & Adventure</option>
+                <option value="Paranormal">Paranormal</option>
+                <option value="Moms & Dads">Parents & Family</option>
+                <option value="Pets">Pets & Animals</option>
+                <option value="Photography">Photography</option>
+                <option value="Beliefs">Religion & Beliefs</option>
+                <option value="Sci fi">Sci-Fi & Fantasy</option>
+                <option value="Singles">Singles</option>
+                <option value="Social">Socializing</option>
+                <option value="Sports">Sports & Recreation</option>
+                <option value="Support">Support</option>
+                <option value="Tech">Tech</option>
+                <option value="Writing">Writing</option>
+              </select>
+            </div>
+            <div class="row">
+              <div class="col s4">
+                <button class="btn waves-effect waves-light indigo darken-3" id="form-submit" type="submit" name="action">Submit
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
 
       <!-- TODO Add collection for query results -->
 
       <!-- Button to trigger scale in/out for collapsible -->
-      <button class="btn waves-effect waves-light indigo darken-3" type="submit" name="action" onclick="scaleFavorites()">Hide
+      <button class="btn waves-effect waves-light indigo darken-3" id="hide-favorites" type="submit" name="action" onclick="scaleFavorites()">Hide
         Favorites
       </button>
 
@@ -110,6 +167,7 @@
     $(document).ready(function () {
       $('.collapsible').collapsible();
       $('.dropdown-trigger').dropdown();
+      $('select').formSelect();
     });
   </script>
 

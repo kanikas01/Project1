@@ -17,3 +17,16 @@ body {
   background-position: cover;
   background-size: 100%;
 }
+
+button {
+  margin-left: 1rem;
+}
+
+li > span {
+  color: black !important;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #9e9e9e !important;
+   box-shadow: 0 1px 0 0 #9e9e9e !important
+}
