@@ -19,31 +19,15 @@
 
 <body>
 
-  <!-- Script for testing scale transition, add to .js file later -->
-  <script>
-    var isVisible = true;
-    function scaleFavorites() {
-      $("#mylist").toggleClass("scale-out");
-      if (isVisible) {
-        isVisible = false;
-        $("#hide-favorites").text("Show Favorites");
-      }
-      else {
-        isVisible = true;
-        $("#hide-favorites").text("Hide Favorites");
-      }
-    }
-  </script>
-
   <header>
 
-    <!-- Added navbar -->
-
+    <!-- Navbar -->
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper indigo darken-2">
           <a href="#" class="brand-logo center">Looking for a fun activity?</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down"> 
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <!-- Floating button with dropdown -->
               <a class="dropdown-trigger btn-floating pulse orange" href='#' data-target='dropdownmenu'><i class="material-icons">menu</i></a>
                 <ul id='dropdownmenu' class='dropdown-content'>
                   <li class="divider" tabindex="-1"></li>
@@ -120,7 +104,7 @@
       <!-- TODO Add collection for query results -->
 
       <!-- Button to trigger scale in/out for collapsible -->
-      <button class="btn waves-effect waves-light indigo darken-3" id="hide-favorites" type="submit" name="action" onclick="scaleFavorites()">Hide
+      <button class="btn waves-effect waves-light indigo darken-3" id="hide-favorites" type="submit" name="action">Hide
         Favorites
       </button>
 
@@ -153,21 +137,13 @@
     </div>
   </footer>
 
-  <!-- Script for testing, add to .js file later -->
-  <script>
-    $(document).ready(function () {
-      $('.collapsible').collapsible();
-      $('.dropdown-trigger').dropdown();
-      $('select').formSelect();
-    });
-  </script>
-
-
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
   <!-- materialize.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- Main JavaScript file -->
   <script src="assets/javascript/main.js"></script>
+  <!-- Additional JavaScript -->
+  <script src="assets/javascript/app.js"></script>
 </body>
 </html>
