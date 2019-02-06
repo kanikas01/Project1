@@ -16,7 +16,8 @@ $(document).ready(function () {
   // ---------- Selectors ---------- //
 
   selectors = {
-    hideFavoritesButton: '#hide-favorites'
+    hideFavoritesButton: '#hide-favorites',
+    formSubmitButton: '#form-submit'
   };
 
 
@@ -41,7 +42,12 @@ $(document).ready(function () {
     }
   });
 
-  
+  // Form submit handler
+  $(selectors.formSubmitButton).on('click', function (event) {
+    event.preventDefault();
+  });
+
+
   // ---------- Helpers ---------- //
 
 });
