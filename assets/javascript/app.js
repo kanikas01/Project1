@@ -31,7 +31,9 @@ $(document).ready(function () {
 
   // ---------- Classes ---------- //
 
-  classes = {};
+  classes = {
+    scaleOut: "scale-out"
+  };
 
 
   // ---------- Events ---------- //
@@ -39,7 +41,7 @@ $(document).ready(function () {
   // Click button to hide or show favorites section
   $(selectors.hideFavoritesButton).on('click', function (event) {
     event.preventDefault();
-    $("#mylist").toggleClass("scale-out");
+    $("#mylist").toggleClass(classes.scaleOut);
     if (isFavoritesVisible) {
       isFavoritesVisible = false;
       $("#hide-favorites").text("Show Favorites");
