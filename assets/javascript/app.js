@@ -6,6 +6,7 @@ $(document).ready(function () {
   $('.collapsible').collapsible();
   $('.dropdown-trigger').dropdown();
   $('select').formSelect();
+  $('.modal').modal();
 
 
   // ---------- Global variables ---------- //
@@ -25,13 +26,17 @@ $(document).ready(function () {
     formSubmitButton: '#form-submit',
     userName: '#name',
     userCity: '#city',
-    chosenCategory: '#category'
+    chosenCategory: '#category',
+    inputModal: "#input-modal",
+    modalPara: ".modal-content > p"
   };
 
 
   // ---------- Classes ---------- //
 
-  classes = {};
+  classes = {
+    scaleOut: "scale-out"
+  };
 
 
   // ---------- Events ---------- //
@@ -39,7 +44,7 @@ $(document).ready(function () {
   // Click button to hide or show favorites section
   $(selectors.hideFavoritesButton).on('click', function (event) {
     event.preventDefault();
-    $("#mylist").toggleClass("scale-out");
+    $("#mylist").toggleClass(classes.scaleOut);
     if (isFavoritesVisible) {
       isFavoritesVisible = false;
       $("#hide-favorites").text("Show Favorites");
@@ -66,18 +71,20 @@ $(document).ready(function () {
       category = '';
     }
 
+    // Validate user input
     if (!patterns.textInput.test(name)) {
-      // $(selectors.modalBody).text('Train Name must not be empty.');
-      // $(selectors.modalAlert).modal('show');
-      console.log('Name field cannot be empty.')
+      $(selectors.modalPara).text('Name field cannot be empty.');
+      $(selectors.inputModal).modal('open');
       return;
     }
     if (!patterns.textInput.test(city)) {
-      console.log('City field cannot be empty.')
+      $(selectors.modalPara).text('City field cannot be empty.');
+      $(selectors.inputModal).modal('open');
       return;
     }
     if (!patterns.textInput.test(category)) {
-      console.log('You must choose a category.')
+      $(selectors.modalPara).text('You must choose a category.');
+      $(selectors.inputModal).modal('open');
       return;
     }
 
