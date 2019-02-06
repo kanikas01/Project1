@@ -7,8 +7,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Favicon -->
   <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
-  <!-- jQuery, maybe move to bottom of page when all js is moved to main.js-->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!--Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- materialize.css -->
@@ -19,32 +17,15 @@
 
 <body>
 
-  <!-- Script for testing scale transition, add to .js file later -->
-  <script>
-    var isVisible = true;
-    function scaleFavorites() {
-      $("#mylist").toggleClass("scale-out");
-      if (isVisible) {
-        isVisible = false;
-        $("#hide-favorites").text("Show Favorites");
-      }
-      else {
-        isVisible = true;
-        $("#hide-favorites").text("Hide Favorites");
-      }
-    }
-  </script>
-
   <header>
-
-    <!-- Added navbar -->
-
+    <!-- Navbar -->
     <div class="navbar-fixed">
       <nav>
         <div class="nav-wrapper indigo darken-2">
           <a href="#" class="brand-logo center">Looking for a fun activity?</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down"> 
-              <a class="dropdown-trigger btn-floating pulse orange" href='#' data-target='dropdownmenu'><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <!-- Floating button with dropdown -->
+              <a class="dropdown-trigger btn-floating orange" href='#' data-target='dropdownmenu'><i class="material-icons">menu</i></a>
                 <ul id='dropdownmenu' class='dropdown-content'>
                   <li class="divider" tabindex="-1"></li>
                   <li><a href="https://www.meetup.com/" class="orange-text" target="_blank" rel="noopener noreferrer">Login to Meetup!</a></li>
@@ -57,7 +38,6 @@
 
   <main>
     <div class="container">
-
       <!-- Form for user input -->
       <div class="row white">
         <form action="" class="col s12 z-depth-1">
@@ -69,7 +49,7 @@
               <input placeholder="Your city" id="city" type="text">
             </div>
             <div class="input-field col s4">
-              <select>
+              <select id="category">
                 <option value="" disabled selected>Select a category</option>
                 <option value="Arts">Arts & Culture</option>
                 <option value="Book Clubs">Book Clubs</option>
@@ -120,7 +100,7 @@
       <!-- TODO Add collection for query results -->
 
       <!-- Button to trigger scale in/out for collapsible -->
-      <button class="btn waves-effect waves-light indigo darken-3" id="hide-favorites" type="submit" name="action" onclick="scaleFavorites()">Hide
+      <button class="btn waves-effect waves-light indigo darken-3" id="hide-favorites" type="submit" name="action">Hide
         Favorites
       </button>
 
@@ -153,21 +133,15 @@
     </div>
   </footer>
 
-  <!-- Script for testing, add to .js file later -->
-  <script>
-    $(document).ready(function () {
-      $('.collapsible').collapsible();
-      $('.dropdown-trigger').dropdown();
-      $('select').formSelect();
-    });
-  </script>
-
-
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <!-- Firebase -->
   <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
   <!-- materialize.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <!-- Main JavaScript file -->
   <script src="assets/javascript/main.js"></script>
+  <!-- Additional JavaScript -->
+  <script src="assets/javascript/app.js"></script>
 </body>
 </html>
