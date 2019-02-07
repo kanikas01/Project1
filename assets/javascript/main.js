@@ -1,9 +1,52 @@
 
-// starter JS
+ // Initialize Firebase
+ var config = {
+    apiKey: "AIzaSyCp4Wh7sChKpj-aS6l7HHuMq8IWXRgwmGA",
+    authDomain: "projecttest1-ab78b.firebaseapp.com",
+    databaseURL: "https://projecttest1-ab78b.firebaseio.com",
+    projectId: "projecttest1-ab78b",
+    storageBucket: "projecttest1-ab78b.appspot.com",
+    messagingSenderId: "875675874182"
+  };
+  firebase.initializeApp(config);
 
+  
+// Create array to capturedata
+  var filters = {
+    "groups" : [
+        "id",
+        "topics",
+        "group_photo",
+        "created"
+    ],
+    "organizers" : [
+        "role",
+        "name"
+    ],
+	"events" : [
+			"id",
+			"name",
+			"time",
+			"event_url",
+			"rsvp_limit",
+			"yes_rsvp_count",
+			"maybe_rsvp_count",
+			"waitlist_count",
+            "venue"
+	],
+	"rsvps" : [
+		"rsvp_id",
+		"event.id",
+		"group.urlname"
+	]
+
+
+
+// starter JS
+// https://www.meetup.com/latechgroup/
 
   var $parameters = {
-    urlname: "nystartrek",
+    urlname: "latechgroup",
     width: 225,
     height:570,
     _name: "Meetup Group Stats",
@@ -95,6 +138,8 @@
                     console.log(event);
                     var venue = event.venue;
                     console.log(venue);
+                    var group = event.group;
+                    console.log(group);
                     var city;
                     if (!venue || !venue.city) {
                         city = group.city;
