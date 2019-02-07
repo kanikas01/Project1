@@ -15,7 +15,8 @@ $(document).ready(function () {
 
   // Regex patterns for validating user input
   patterns = {
-    textInput: /\w+/
+    textInput: /\w+/,
+    zipInput: /^\d{5}$/
   };
 
 
@@ -60,11 +61,11 @@ $(document).ready(function () {
     event.preventDefault();
     // Get user input
     var name = $(selectors.userName).val().trim();
-    var city = $(selectors.userZipCode).val().trim();
-    var category; 
+    var zip = $(selectors.userZipCode).val().trim();
+    var category;
     // user must choose a category or the .trim method will throw an error
     // if no value is chosen then category is set to an empty string
-    if ( $(selectors.chosenCategory).val() ) {
+    if ($(selectors.chosenCategory).val()) {
       category = $(selectors.chosenCategory).val().trim();
     }
     else {
@@ -77,8 +78,8 @@ $(document).ready(function () {
       $(selectors.inputModal).modal('open');
       return;
     }
-    if (!patterns.textInput.test(city)) {
-      $(selectors.modalPara).text('City field cannot be empty.');
+    if (!patterns.zipInput.test(zip)) {
+      $(selectors.modalPara).text('Zip code must be 5 digits');
       $(selectors.inputModal).modal('open');
       return;
     }
@@ -88,7 +89,7 @@ $(document).ready(function () {
       return;
     }
 
-    console.log(name, city, category);
+    console.log(name, zip, category);
   });
 
 
