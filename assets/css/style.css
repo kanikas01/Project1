@@ -16,6 +16,7 @@ body {
   background-image: url("../images/background.jpg");
   background-position: cover;
   background-size: 100%;
+  background-attachment: fixed;
 }
 
 button {
@@ -34,3 +35,4 @@ li > span {
 .modal { 
   width: 25% !important;  
 } 
+
