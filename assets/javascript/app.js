@@ -25,7 +25,7 @@ $(document).ready(function () {
     hideFavoritesButton: '#hide-favorites',
     formSubmitButton: '#form-submit',
     userName: '#name',
-    userCity: '#city',
+    userZipCode: '#zip',
     chosenCategory: '#category',
     inputModal: "#input-modal",
     modalPara: ".modal-content > p"
@@ -60,7 +60,7 @@ $(document).ready(function () {
     event.preventDefault();
     // Get user input
     var name = $(selectors.userName).val().trim();
-    var city = $(selectors.userCity).val().trim();
+    var city = $(selectors.userZipCode).val().trim();
     var category; 
     // user must choose a category or the .trim method will throw an error
     // if no value is chosen then category is set to an empty string
