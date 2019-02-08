@@ -29,6 +29,7 @@ body,html {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 body {
@@ -37,6 +38,7 @@ body {
   background-image: url("../images/background.jpg");
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
 }
 
 /* END mobile responsive*/
