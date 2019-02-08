@@ -43,13 +43,10 @@
       <div class="row white">
         <form action="" class="col s12 z-depth-1">
           <div class="row">
-            <div class="input-field col s12 m4">
-              <input placeholder="Your name" id="name" type="text">
-            </div>
-            <div class="input-field col s12 m4">
+            <div class="input-field col s12 m6">
               <input placeholder="Five digit zip code" id="zip" type="text">
             </div>
-            <div class="input-field col s12 m4">
+            <div class="input-field col s12 m6">
               <select id="category">
                 <option value="" disabled selected>Select a category</option>
                 <option value="1">Arts & Culture</option>
@@ -88,9 +85,14 @@
               </select>
             </div>
             <div class="row">
-              <div class="col s4">
-                <button class="btn waves-effect waves-light indigo darken-3" id="form-submit" type="submit" name="action">Submit
+              <div class="col s6 center-align">
+                <button class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" type="submit" name="action">Submit
                   <i class="material-icons right">send</i>
+                </button>
+              </div>
+              <div class="col s6 center-align">
+                <button class="btn-large waves-effect waves-light indigo darken-3" id="clear-results" type="submit" name="action">Clear
+                  <i class="material-icons right">clear</i>
                 </button>
               </div>
             </div>
@@ -99,7 +101,7 @@
       </div>
 
       <!-- Row for query results -->
-      <div class="row" id="results"></div>
+      <div class="row" id="meetup-results"></div>
 
       <!-- Button to trigger scale in/out for collapsible -->
       <!-- <button class="btn waves-effect waves-light indigo darken-3" id="hide-favorites" type="submit" name="action">Hide
