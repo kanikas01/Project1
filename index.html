@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -26,10 +27,11 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <!-- Floating button with dropdown -->
               <a class="dropdown-trigger btn-floating orange" href='#' data-target='dropdownmenu'><i class="material-icons">menu</i></a>
-                <ul id='dropdownmenu' class='dropdown-content'>
-                  <li><a href="https://www.meetup.com/" class="orange-text" target="_blank" rel="noopener noreferrer">Login to Meetup!</a></li>
-                </ul>
+              <ul id='dropdownmenu' class='dropdown-content'>
+                <li><a href="https://www.meetup.com/" class="orange-text" target="_blank" rel="noopener noreferrer">Login to Meetup!</a></li>
+              </ul>
             </ul>
+          </ul>
         </div>
       </nav>
     </div>
@@ -41,54 +43,56 @@
       <div class="row white">
         <form action="" class="col s12 z-depth-1">
           <div class="row">
-            <div class="input-field col s12 m4">
-              <input placeholder="Your name" id="name" type="text">
+            <div class="input-field col s12 m6">
+              <input placeholder="Five digit zip code" id="zip" type="text">
             </div>
-            <div class="input-field col s12 m4">
-              <input placeholder="Your city" id="city" type="text">
-            </div>
-            <div class="input-field col s12 m4">
+            <div class="input-field col s12 m6">
               <select id="category">
                 <option value="" disabled selected>Select a category</option>
-                <option value="Arts">Arts & Culture</option>
-                <option value="Book Clubs">Book Clubs</option>
-                <option value="Business">Career & Business</option>
-                <option value="Auto">Cars & Motorcycles</option>
-                <option value="Community">Community & Environment</option>
-                <option value="Dancing">Dancing</option>
-                <option value="Education">Education & Learning</option>
-                <option value="Fashion">Fashion & Beauty</option>
-                <option value="Fitness">Fitness</option>
-                <option value="Food & Drink">Food & Drink</option>
-                <option value="Games">Games</option>
-                <option value="Movements">Movements & Politics</option>
-                <option value="Well-being">Health & Wellbeing</option>
-                <option value="Crafts">Hobbies & Crafts</option>
-                <option value="Languages">Language & Ethnic Identity</option>
-                <option value="LGBT">LGBT</option>
-                <option value="Lifestyle">Lifestyle</option>
-                <option value="Films">Movies & Film</option>
-                <option value="Music">Music</option>
-                <option value="Spirituality">New Age & Spirituality</option>
-                <option value="Outdoors">Outdoors & Adventure</option>
-                <option value="Paranormal">Paranormal</option>
-                <option value="Moms & Dads">Parents & Family</option>
-                <option value="Pets">Pets & Animals</option>
-                <option value="Photography">Photography</option>
-                <option value="Beliefs">Religion & Beliefs</option>
-                <option value="Sci fi">Sci-Fi & Fantasy</option>
-                <option value="Singles">Singles</option>
-                <option value="Social">Socializing</option>
-                <option value="Sports">Sports & Recreation</option>
-                <option value="Support">Support</option>
-                <option value="Tech">Tech</option>
-                <option value="Writing">Writing</option>
+                <option value="1">Arts & Culture</option>
+                <option value="18">Book Clubs</option>
+                <option value="2">Career & Business</option>
+                <option value="3">Cars & Motorcycles</option>
+                <option value="4">Community & Environment</option>
+                <option value="5">Dancing</option>
+                <option value="6">Education & Learning</option>
+                <option value="8">Fashion & Beauty</option>
+                <option value="9">Fitness</option>
+                <option value="10">Food & Drink</option>
+                <option value="11">Games</option>
+                <option value="13">Movements & Politics</option>
+                <option value="14">Health & Wellbeing</option>
+                <option value="15">Hobbies & Crafts</option>
+                <option value="16">Language & Ethnic Identity</option>
+                <option value="12">LGBT</option>
+                <option value="17">Lifestyle</option>
+                <option value="20">Movies & Film</option>
+                <option value="21">Music</option>
+                <option value="22">New Age & Spirituality</option>
+                <option value="23">Outdoors & Adventure</option>
+                <option value="24">Paranormal</option>
+                <option value="25">Parents & Family</option>
+                <option value="26">Pets & Animals</option>
+                <option value="27">Photography</option>
+                <option value="28">Religion & Beliefs</option>
+                <option value="29">Sci-Fi & Fantasy</option>
+                <option value="30">Singles</option>
+                <option value="31">Socializing</option>
+                <option value="32">Sports & Recreation</option>
+                <option value="33">Support</option>
+                <option value="34">Tech</option>
+                <option value="36">Writing</option>
               </select>
             </div>
             <div class="row">
-              <div class="col s4">
-                <button class="btn waves-effect waves-light indigo darken-3" id="form-submit" type="submit" name="action">Submit
+              <div class="col s6 center-align">
+                <button class="btn-large waves-effect waves-light indigo darken-3" id="form-submit" type="submit" name="action">Submit
                   <i class="material-icons right">send</i>
+                </button>
+              </div>
+              <div class="col s6 center-align">
+                <button class="btn-large waves-effect waves-light indigo darken-3" id="clear-results" type="submit" name="action">Clear
+                  <i class="material-icons right">clear</i>
                 </button>
               </div>
             </div>
@@ -96,34 +100,17 @@
         </form>
       </div>
 
-      <!-- Collection for query results -->
-      <div class="collection">
-        <a href="#!" class="collection-item indigo-text text-darken-3">Results</a>
-        <a href="#!" class="collection-item indigo-text text-darken-3">Results</a>
-        <a href="#!" class="collection-item indigo-text text-darken-3">Results</a>
-        <a href="#!" class="collection-item indigo-text text-darken-3">Results</a>
-      </div>
-
       <!-- Button to trigger scale in/out for collapsible -->
-      <button class="btn waves-effect waves-light indigo darken-3" id="hide-favorites" type="submit" name="action">Hide
+      <!-- <button class="btn waves-effect waves-light indigo darken-3" id="hide-favorites" type="submit" name="action">Hide
         Favorites
-      </button>
+      </button> -->
 
       <!-- Collapsible for user's favorite events -->
-      <ul class="collapsible scale-transition" id="mylist">
-        <li>
-          <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-          <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-          <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
+      <ul class="collapsible z-depth-1" id="weather-results">
       </ul>
+
+      <!-- Row for query results -->
+      <div class="row" id="meetup-results"></div>
 
     </div>
 
@@ -155,9 +142,11 @@
   <script src="https://www.gstatic.com/firebasejs/5.8.1/firebase.js"></script>
   <!-- materialize.js -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <!-- moment.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <!-- Main JavaScript file -->
-  <script src="assets/javascript/main.js"></script>
-  <!-- Additional JavaScript -->
   <script src="assets/javascript/app.js"></script>
+  <!-- Additional JavaScript -->
+  <!-- <script src="assets/javascript/main.js"></script> -->
 </body>
 </html>
