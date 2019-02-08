@@ -36,3 +36,14 @@ nav .brand-logo {
   display: table;
 }
 
+#weather-results {
+  display: none;
+}
+
+@media screen and (max-width: 980px) {
+  
+  .modal { 
+    width: 55% !important;  
+  }
+
+}
