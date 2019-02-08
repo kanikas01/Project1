@@ -12,8 +12,8 @@ $(document).ready(function () {
   // ---------- Global variables ---------- //
 
   var isFavoritesVisible = true;
-  var weatherAPIkey = "";
-  var meetupAPIkey = "";
+  var weatherAPIkey;
+  var meetupAPIkey;
   var weatherQueryURL = 'https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast?units=imperial';
   var meetupQueryURL = 'https://cors-anywhere.herokuapp.com/https://api.meetup.com/2/open_events.json?time=,3d';
 
@@ -32,6 +32,9 @@ $(document).ready(function () {
   selectors = {
     hideFavoritesButton: '#hide-favorites',
     formSubmitButton: '#form-submit',
+    clearResultsButton: '#clear-results',
+    meetupResults: '#meetup-results',
+    weatherResults: '#weather-results',
     userName: '#name',
     userZipCode: '#zip',
     chosenCategory: '#category',
@@ -52,7 +55,7 @@ $(document).ready(function () {
   // Click button to hide or show favorites section
   $(selectors.hideFavoritesButton).on('click', function (event) {
     event.preventDefault();
-    $("#mylist").toggleClass(classes.scaleOut);
+    $(selectors.weatherResults).toggleClass(classes.scaleOut);
     if (isFavoritesVisible) {
       isFavoritesVisible = false;
       $("#hide-favorites").text("Show Favorites");
@@ -63,11 +66,18 @@ $(document).ready(function () {
     }
   });
 
+  // Click button to hide or show favorites section
+  $(selectors.clearResultsButton).on('click', function (event) {
+    event.preventDefault();
+    $(selectors.meetupResults).empty();
+    $(selectors.weatherResults).empty();
+  });
+
   // Form submit handler
   $(selectors.formSubmitButton).on('click', function (event) {
     event.preventDefault();
     // Get user input
-    var name = $(selectors.userName).val().trim();
+    // var name = $(selectors.userName).val().trim();
     var zip = $(selectors.userZipCode).val().trim();
     var category;
     // user must choose a category or the .trim method will throw an error
@@ -80,11 +90,11 @@ $(document).ready(function () {
     }
 
     // Validate user input
-    if (!patterns.textInput.test(name)) {
-      $(selectors.modalPara).text('Name field cannot be empty.');
-      $(selectors.inputModal).modal('open');
-      return;
-    }
+      // if (!patterns.textInput.test(name)) {
+      //   $(selectors.modalPara).text('Name field cannot be empty.');
+      //   $(selectors.inputModal).modal('open');
+      //   return;
+      // }
     if (!patterns.zipInput.test(zip)) {
       $(selectors.modalPara).text('Zip code must be 5 digits');
       $(selectors.inputModal).modal('open');
@@ -129,14 +139,14 @@ $(document).ready(function () {
                 ${event.venue.city}<br>`)
     }
     var contentDiv2 = $('<div class="card-action">');
-    var anchor1 = $(`<a href="${event.event_url}">More Info</a>`)
-    var anchor2 = $(`<a href="#!">weather conditions</a>`);
+    var anchor1 = $(`<a href="${event.event_url}" target="_blank" rel="noopener noreferrer">More Info</a>`)
+    // var anchor2 = $(`<a href="#!" target="_blank" rel="noopener noreferrer">weather conditions</a>`);
 
     // Assemble content divs
     contentDiv1.append(span);
     contentDiv1.append(para);
     contentDiv2.append(anchor1);
-    contentDiv2.append(anchor2);
+    // contentDiv2.append(anchor2);
 
     //Assemble interior div
     interiorDiv.append(contentDiv1);
@@ -146,6 +156,6 @@ $(document).ready(function () {
     exteriorDiv.append(interiorDiv);
 
     // Append card to results div
-    $('#results').append(exteriorDiv);
+    $(selectors.meetupResults).append(exteriorDiv);
   }
 });

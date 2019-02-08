@@ -19,10 +19,6 @@ body {
   background-attachment: fixed;
 }
 
-button {
-  margin-left: 1rem;
-}
-
 li > span {
   color: black !important;
 }
@@ -35,4 +31,8 @@ li > span {
 .modal { 
   width: 25% !important;  
 } 
+
+nav .brand-logo {
+  display: table;
+}
 
