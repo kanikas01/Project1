@@ -130,7 +130,7 @@ $(document).ready(function () {
     }).then(function (response) {
       // console.log(response);
       response.list.forEach(function (element) {
-        if (element.dt_txt.endsWith('21:00:00')) {
+        if (element.dt_txt.endsWith('00:00:00')) {
           console.log(element);
           weatherInfo = {
             temp: element.main.temp,
