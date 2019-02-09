@@ -13,8 +13,8 @@ $(document).ready(function () {
   // ---------- Global variables ---------- //
 
   var isFavoritesVisible = true;
-  var weatherAPIkey;
-  var meetupAPIkey;
+  var weatherAPIkey = "1d82f9065f21fd5c97b741bc40699053";
+  var meetupAPIkey = "34755e7077f1951b231b5a72276260";
   var weatherQueryURL = 'https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast?units=imperial';
   var meetupQueryURL = 'https://cors-anywhere.herokuapp.com/https://api.meetup.com/2/open_events.json?time=,5d';
 
@@ -67,17 +67,14 @@ $(document).ready(function () {
   // Click button to clear page results
   $(selectors.clearResultsButton).on('click', function (event) {
     event.preventDefault();
-    $(selectors.meetupResults).empty();
-    $(selectors.weatherResults).empty();
-    $(selectors.weatherResults).css('display', 'none');
+    clearResults();
   });
 
   // Form submit handler
   $(selectors.formSubmitButton).on('click', function (event) {
     event.preventDefault();
     // Clear current page results
-    $(selectors.meetupResults).empty();
-    $(selectors.weatherResults).empty();
+    clearResults();
     // Get user input
     // var name = $(selectors.userName).val().trim();
     var zip = $(selectors.userZipCode).val().trim();
@@ -92,11 +89,11 @@ $(document).ready(function () {
     }
 
     // Validate user input
-      // if (!patterns.textInput.test(name)) {
-      //   $(selectors.modalPara).text('Name field cannot be empty.');
-      //   $(selectors.inputModal).modal('open');
-      //   return;
-      // }
+    // if (!patterns.textInput.test(name)) {
+    //   $(selectors.modalPara).text('Name field cannot be empty.');
+    //   $(selectors.inputModal).modal('open');
+    //   return;
+    // }
     if (!patterns.zipInput.test(zip)) {
       $(selectors.modalPara).text('Zip code must be 5 digits');
       $(selectors.inputModal).modal('open');
@@ -122,8 +119,8 @@ $(document).ready(function () {
         createEventCard(element);
       });
     });
-    
-      // Weather ajax request
+
+    // Weather ajax request
     $.ajax({
       url: weatherQueryURL,
       method: "GET",
@@ -160,7 +157,7 @@ $(document).ready(function () {
     var span = $('<span class="card-title">');
     span.text(event.name);
     var para = $('<p>');
-    
+
     // If the event has a venue listed, use it
     if (event.hasOwnProperty('venue')) {
       para.html(`${event.venue.name}<br>
@@ -235,7 +232,12 @@ $(document).ready(function () {
 
     // Append list item to weather results div
     listItem.appendTo(selectors.weatherResults);
-    
+  }
+
+  function clearResults() {
+    $(selectors.meetupResults).empty();
+    $(selectors.weatherResults).empty();
+    $(selectors.weatherResults).css('display', 'none');
   }
 
 });
