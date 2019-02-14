@@ -1,5 +1,0 @@
-
-
-    var queryURL = "http://api.meetup.com/2/cities?&api_key=111d4e70325b70196712106e49262757";
-    var queryURL = "http://api.meetup.com/2/categories?&api_key=111d4e70325b70196712106e49262757";
-        var queryURL = "http://api.meetup.com/2/open_events?&api_key=111d4e70325b70196712106e49262757";
