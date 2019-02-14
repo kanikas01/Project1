@@ -115,7 +115,6 @@ $(document).ready(function () {
       method: "GET",
     }).then(function (response) {
       response.results.forEach(function (element) {
-        console.log(element);
         createEventCard(element);
       });
     });
@@ -125,10 +124,8 @@ $(document).ready(function () {
       url: weatherQueryURL,
       method: "GET",
     }).then(function (response) {
-      // console.log(response);
       response.list.forEach(function (element) {
         if (element.dt_txt.endsWith('00:00:00')) {
-          console.log(element);
           weatherInfo = {
             temp: element.main.temp,
             description: element.weather[0].main,
@@ -190,8 +187,6 @@ $(document).ready(function () {
   // Takes an object with weather data and creates a list item
   // with that data then appends it to the weather results div
   function createWeatherEntry(weather) {
-    // console.log(weather.temp);   // For testing
-    // console.log(weather.description);  // For testing
 
     // Declare DOM element variables
     var listItem = $('<li>');
