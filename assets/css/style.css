@@ -40,6 +40,10 @@ nav .brand-logo {
   display: none;
 }
 
+.card-content {
+  height: 200px;
+}
+
 @media screen and (max-width: 980px) {
   
   .modal { 
