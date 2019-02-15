@@ -42,6 +42,7 @@ nav .brand-logo {
 
 .card-content {
   height: 200px;
+  overflow: scroll;
 }
 
 @media screen and (max-width: 980px) {
